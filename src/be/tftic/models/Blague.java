@@ -2,13 +2,13 @@ package be.tftic.models;
 
 
 
-public class Blague {
+public class  Blague {
     private long id;
     private String jokeContent;
     private String category;
 
     public Blague (String jokeContent, String category) {
-        this.id = Identifier.IdCounter++;
+        //this.id = Identifier.IdCounter++;
         this.jokeContent = jokeContent;
         this.category = category;
     }
