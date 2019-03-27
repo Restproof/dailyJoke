@@ -1,8 +1,9 @@
 package be.tftic.models;
 
 
+import java.io.Serializable;
 
-public class Blague {
+public class Blague implements Serializable {
     private long id;
     private String jokeContent;
     private String category;
