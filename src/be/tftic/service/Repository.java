@@ -4,14 +4,14 @@ import java.io.*;
 
 public class Repository <T> {
 
-    private static Repository ourInstance = new Repository();
+    /*private static Repository ourInstance = new Repository();
 
     public static Repository getInstance() {
         return ourInstance;
     }
 
     private Repository () {
-    }
+    }*/
 
     public void create(T obj) {
 
@@ -50,5 +50,6 @@ public class Repository <T> {
         }
         return obj;
     }
+
 }
 
