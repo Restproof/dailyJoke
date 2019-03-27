@@ -4,7 +4,8 @@ import be.tftic.models.Blague;
 
 import java.io.*;
 
-public class Repository <T,Tkey> {
+public class Repository <T> {
+
     public void create(T obj) {
 
         ObjectOutputStream oos;
@@ -12,7 +13,7 @@ public class Repository <T,Tkey> {
             oos = new ObjectOutputStream(
                     new BufferedOutputStream(
                             new FileOutputStream(
-                                    new File("\\Logs\\blagues.txt"))));
+                                    new File("blagues.txt"))));
             oos.writeObject(obj);
             oos.close();
         } catch (FileNotFoundException e) {
@@ -22,3 +23,4 @@ public class Repository <T,Tkey> {
         }
     }
 }
+
