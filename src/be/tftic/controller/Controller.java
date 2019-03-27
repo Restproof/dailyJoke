@@ -32,7 +32,8 @@ public class Controller {
                     System.out.println("update");
                     break;
                 case "display":
-                    System.out.println("read");
+                    Blague blague=repo.read();
+                    System.out.println(blague.getJokeContent()+" cat :"+blague.getCategory());
                     break;
                 case "stop":
                     System.out.println("close");
