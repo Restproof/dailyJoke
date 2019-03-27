@@ -12,7 +12,7 @@ public class Repository <T> {
 
     private Repository () {
     }
-    
+
     public void create(T obj) {
 
         ObjectOutputStream oos;
@@ -28,6 +28,27 @@ public class Repository <T> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public T read(){
+        ObjectInputStream ois;
+        T obj = null;
+        try {
+            ois = new ObjectInputStream(
+                    new BufferedInputStream(
+                            new FileInputStream(
+                                    new File ("blagues.txt"))));
+            try {
+                obj = (T)ois.readObject();
+
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return obj;
     }
 }
 
