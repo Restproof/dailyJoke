@@ -1,9 +1,13 @@
 package be.tftic;
 import java.util.Scanner;
 
+import be.tftic.models.Blague;
+import be.tftic.service.Repository;
+
 public class Main {
 
     public static void main(String[] args) {
+
 	System.out.println("coucou Thierry");
 	// Choix de l'utilisateur
 	String userInput="";
@@ -35,5 +39,8 @@ public class Main {
 				break;
 			}
         }
+
+        
+
     }
 }
