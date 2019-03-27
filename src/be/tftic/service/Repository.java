@@ -1,11 +1,18 @@
 package be.tftic.service;
 
-import be.tftic.models.Blague;
-
 import java.io.*;
 
 public class Repository <T> {
 
+    private static Repository ourInstance = new Repository();
+
+    public static Repository getInstance() {
+        return ourInstance;
+    }
+
+    private Repository () {
+    }
+    
     public void create(T obj) {
 
         ObjectOutputStream oos;
