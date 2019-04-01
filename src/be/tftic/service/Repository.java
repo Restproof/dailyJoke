@@ -4,6 +4,7 @@ import java.io.*;
 
 public class Repository <T> {
 
+
    /* private static Repository ourInstance = new Repository();
 
     public static Repository getInstance() {
@@ -20,7 +21,7 @@ public class Repository <T> {
             oos = new ObjectOutputStream(
                     new BufferedOutputStream(
                             new FileOutputStream(
-                                    new File("blagues.txt"))));
+                                    new File("blagues.txt"), true)));
             oos.writeObject(obj);
             oos.close();
         } catch (FileNotFoundException e) {
@@ -50,5 +51,6 @@ public class Repository <T> {
         }
         return obj;
     }
+
 }
 
