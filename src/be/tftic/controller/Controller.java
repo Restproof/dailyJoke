@@ -1,7 +1,9 @@
 package be.tftic.controller;
+import java.util.List;
 import be.tftic.models.Blague;
 import be.tftic.service.Repository;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Controller {
@@ -25,10 +27,11 @@ public class Controller {
                     // contenu de la blague
                     String blagueContent=stringScanner.nextLine();
                     // catégorie de la blague
-                    System.out.println("catégorie de la blague");
+                    System.out.println("Catégorie de la blague");
                     String cat=stringScanner.nextLine();
                     Blague newBlague= new Blague(blagueContent ,cat);
                    repo.create(newBlague);
+                   //oki
                    System.out.println("blague ajoutée");
                     break;
                 case "delete":
@@ -38,8 +41,11 @@ public class Controller {
                     System.out.println("update");
                     break;
                 case "display":
-                    Blague blague=repo.read();
-                    System.out.println(blague.getJokeContent()+" cat :"+blague.getCategory());
+                    List<Blague> liste = repo.read();
+                    for(Blague key : liste){
+                        System.out.println(key.getJokeContent()+" cat :"+ key.getCategory());
+                    }
+
                     break;
                 case "stop":
                     System.out.println("close");
