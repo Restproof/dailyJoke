@@ -1,6 +1,8 @@
 package be.tftic.service;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Repository <T> {
 
@@ -31,16 +33,20 @@ public class Repository <T> {
         }
     }
 
-    public T read(){
+    public List<T> read(){
         ObjectInputStream ois;
-        T obj = null;
+        List<T> list = new ArrayList<T>();
+
         try {
             ois = new ObjectInputStream(
                     new BufferedInputStream(
                             new FileInputStream(
                                     new File ("blagues.txt"))));
             try {
-                obj = (T)ois.readObject();
+                while(ois.readObject() != null){
+                    list.add((T)ois.readObject());
+
+                }
 
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
@@ -49,7 +55,7 @@ public class Repository <T> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return obj;
+        return list;
     }
 
 }
