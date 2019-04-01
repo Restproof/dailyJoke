@@ -21,10 +21,11 @@ public class Controller {
             switch (userInput) {
                 case "add":
                     //blague à insérer
-                    System.out.println("La blague");
+                    System.out.println("Contenu de la blague");
                     // contenu de la blague
                     String blagueContent=stringScanner.nextLine();
                     // catégorie de la blague
+                    System.out.println("catégorie de la blague");
                     String cat=stringScanner.nextLine();
                     Blague newBlague= new Blague(blagueContent ,cat);
                    repo.create(newBlague);
