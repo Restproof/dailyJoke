@@ -20,7 +20,7 @@ public class Controller {
             userInput=stringScanner.nextLine();
             switch (userInput) {
                 case "add":
-                    //blague à insérer
+                    //blague à insérer lol
                     System.out.println("Contenu de la blague");
                     // contenu de la blague
                     String blagueContent=stringScanner.nextLine();
