@@ -8,21 +8,12 @@ import java.util.List;
 
 public class Repository <T> {
 
-
-   /* private static Repository ourInstance = new Repository();
-
-    public static Repository getInstance() {
-        return ourInstance;
-    }
-
-    private Repository () {
-    }*/
-
     public void create(T obj) {
 
         File newFile = new File ("blagues.txt");
         ObjectOutputStream oos = null;
         AppendableObjectOutputStream aoos = null;
+
         try {
             oos = new ObjectOutputStream(
                     new BufferedOutputStream(
@@ -45,22 +36,12 @@ public class Repository <T> {
                 aoos.close();
             }
 
-
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        finally {
-//            try {
-//
-//                oos.close();
-//                aoos.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
+
     }
 
     public List<T> read(){
@@ -84,7 +65,6 @@ public class Repository <T> {
                     obj = (T) ois.readObject();
                     list.add(obj);
                 }
-
         }
 
         catch(EOFException e){
