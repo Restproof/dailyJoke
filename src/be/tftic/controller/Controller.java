@@ -25,7 +25,7 @@ public class Controller {
                     // contenu de la blague
                     String blagueContent=stringScanner.nextLine();
                     // catégorie de la blague
-                    System.out.println("catégorie de la blague");
+                    System.out.println("Catégorie de la blague");
                     String cat=stringScanner.nextLine();
                     Blague newBlague= new Blague(blagueContent ,cat);
                    repo.create(newBlague);
