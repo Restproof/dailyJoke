@@ -21,7 +21,13 @@ public class Controller {
             switch (userInput) {
                 case "add":
                     //blague à insérer
-                    Blague newBlague= new Blague("Pourquoi les nord Coréens boivent du thé vert?C'est riche en anti-occident!" ,"politique");
+                    System.out.println("Contenu de la blague");
+                    // contenu de la blague
+                    String blagueContent=stringScanner.nextLine();
+                    // catégorie de la blague
+                    System.out.println("catégorie de la blague");
+                    String cat=stringScanner.nextLine();
+                    Blague newBlague= new Blague(blagueContent ,cat);
                    repo.create(newBlague);
                    System.out.println("blague ajoutée");
                     break;
