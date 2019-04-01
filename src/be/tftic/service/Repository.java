@@ -21,7 +21,7 @@ public class Repository <T> {
             oos = new ObjectOutputStream(
                     new BufferedOutputStream(
                             new FileOutputStream(
-                                    new File("blagues.txt"))));
+                                    new File("blagues.txt"), true)));
             oos.writeObject(obj);
             oos.close();
         } catch (FileNotFoundException e) {
