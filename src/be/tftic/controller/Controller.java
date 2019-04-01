@@ -29,7 +29,7 @@ public class Controller {
                     String cat=stringScanner.nextLine();
                     Blague newBlague= new Blague(blagueContent ,cat);
                    repo.create(newBlague);
-                   //ok
+                   //oki
                    System.out.println("blague ajoutée");
                     break;
                 case "delete":
